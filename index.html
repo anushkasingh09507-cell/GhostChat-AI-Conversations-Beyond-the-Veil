@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090912" />
+  <title>GhostChat AI — Conversations Beyond the Veil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="GhostChat home">
+        <span class="brand-mark">✦</span><span>GHOSTCHAT<span class="brand-ai">.AI</span></span>
+      </a>
+      <div class="status"><span class="status-dot"></span><span id="model-status">MODEL NOT LOADED</span></div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">✧ AN OPEN-SOURCE AI EXPERIMENT ✧</p>
+      <h1>Some conversations<br><span>never end.</span></h1>
+      <p class="subtitle">Step into the unknown. Ask the spirit anything… if you dare.</p>
+    </section>
+
+    <section class="chat-card" aria-label="GhostChat conversation">
+      <div class="chat-heading">
+        <div class="avatar" aria-hidden="true">👻</div>
+        <div><h2>The Spirit</h2><p>Your mysterious AI companion</p></div>
+        <button id="clear-btn" class="clear-btn" type="button" title="Clear conversation">↺ <span>Reset</span></button>
+      </div>
+
+      <div id="chat-log" class="chat-log" aria-live="polite">
+        <div class="message spirit-message">
+          <div class="message-avatar">👻</div>
+          <div class="bubble"><p>You have crossed the threshold… I am listening. Ask me for a ghost story, a strange riddle, or a glimpse into the unknown.</p></div>
+        </div>
+      </div>
+
+      <div class="suggestions" id="suggestions">
+        <button class="suggestion" type="button">Tell me a  spooky story</button>
+        <button class="suggestion" type="button">Give me a cursed riddle</button>
+        <button class="suggestion" type="button">What lurks in the dark?</button>
+      </div>
+
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="user-input">Your message</label>
+        <input id="user-input" type="text" maxlength="500" placeholder="Whisper something to the spirit…" autocomplete="off" />
+        <button id="send-btn" type="submit" aria-label="Send message">➤</button>
+      </form>
+      <div class="card-footer"><span>◈ Runs an open-weight model in your browser</span><span id="char-count">0 / 500</span></div>
+    </section>
+
+    <section class="model-panel">
+      <div class="model-icon">⌘</div>
+      <div class="model-copy">
+        <strong>Powered by SmolLM2</strong>
+        <span>Open-weight language model · Browser-based inference</span>
+      </div>
+      <button id="load-model-btn" class="load-btn" type="button">Summon the spirit</button>
+    </section>
+
+    <p class="privacy-note">Your messages are processed in your browser after the model loads. The model is downloaded from Hugging Face on first use.</p>
+    <footer>MADE FOR THE CURIOUS & THE COURAGEOUS <span>✧</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>
